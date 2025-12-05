@@ -16,7 +16,8 @@ await whatunilogin.homepage();
 await whatunilogin.cookie.click();
 await whatunilogin.usericon.click();
 await whatunilogin.firstname.fill("test@vpn.com");
-await whatunilogin.password.fi("Test@123");
+await whatunilogin.password.fill("Test@123");
+ console.log('sarath');
 // await whatunilogin.submit.click();
 
 })
