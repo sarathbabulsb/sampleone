@@ -21,3 +21,28 @@ await whatunilogin.password.fill("Test@123");
 // await whatunilogin.submit.click();
 
 })
+
+test("practicetest",async({browser,page})=>{
+await page.goto("https://www.whatuni.com/");
+await page.getByRole("button",{name:'Accept'}).click();
+const currenturl = await page.url();
+console.log(currenturl);
+await expect(currenturl).toContain("whatuni");
+await page.locator("//div[@class='relative shrink-0']").click();
+await page.getByPlaceholder("Enter subject").fill("Business");
+await page.locator("//button[text()='Search']").click();
+// await page.getByRole("button",{name:'Search'}).click();
+await page.locator("div.topnav",{hasText:/Money/i});
+await page.screenshot({path:'wu.png'});
+expect(await page.screenshot()).toMatchSnapshot('wu.png');
+const text=await page.locator("//h1[normalize-space (text())='Business degrees']").textContent();
+console.log(text);
+expect(text).to("Business degrees");
+})
+
+test("adding",async({browser,page})=>{
+
+await page.goto("https://practice.expandtesting.com/");
+const allproduct=await page.locator("div.col-md-3").filter({hasText:'Web inputs'});
+await allproduct.getByRole('link',{name:'Try it out'}).click();
+})
