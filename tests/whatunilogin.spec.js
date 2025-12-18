@@ -1,7 +1,7 @@
 const {test,expect}=require('@playwright/test');
 const { wlogin } = require('../pageobject/whatunilogin');
 
-test("whatunilogin",async({browser,page})=>
+test("@Regression whatunilogin",async({browser,page})=>
     
     {
 const whatunilogin=new wlogin(page);
