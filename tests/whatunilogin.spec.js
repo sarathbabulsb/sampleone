@@ -95,7 +95,7 @@ await page.goto("https://www.whatuni.com/");
 await page.getByRole("button",{name:'Accept'}).click();
 await page.locator("[title='User']").click();
 await page.screenshot();
-await page.locator("").screenshot();
+await page.locator("test").screenshot();
 page.locator().pressSequentially()
 page.on("dialog",dialog=>dialog.accept);
 page.locator().scrollIntoViewIfNeeded
