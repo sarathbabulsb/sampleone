@@ -11,6 +11,7 @@ const whatunilogin=new wlogin(page);
 // await page.locator("#loginemail").fill("test@vpn.com");
 // await page.locator("#textpwd").fill("Test@123");
 // await page.locator("[title='Sign in']").click();
+await page.getByRole()
 
 await whatunilogin.homepage();
 await whatunilogin.cookie.click();
@@ -45,4 +46,58 @@ test("adding",async({browser,page})=>{
 await page.goto("https://practice.expandtesting.com/");
 const allproduct=await page.locator("div.col-md-3").filter({hasText:'Web inputs'});
 await allproduct.getByRole('link',{name:'Try it out'}).click();
+})
+
+// test.only('Verify Chrome browser launch', async () => {
+//   const browser = await chromium.launch({
+//     channel: 'chrome',
+//     headless: false
+//   });
+
+//   const page = await browser.newPage();
+//   await page.goto('https://example.com');
+//   await expect(page).toHaveTitle(/Example/);
+//   await browser.close();
+// });
+
+// ("test",async()=>{
+// const browser = await chromium.launch()({
+// cahnnel:'chrome',
+// headless:true
+
+
+// })
+// const page=await browser.newpage();
+// page.goto("test")
+
+// });
+
+
+
+
+
+// ("test",async()=>{
+
+// const browser =await chromium.launch({
+//     channel:'chrome',
+//     headless:true
+// })
+// const context=browser.newcontext;
+// const page=context.newpage();
+// await page.goto("www.test.com");
+
+
+// })
+
+test.only("srinitest",async({browser,page})=>{
+
+await page.goto("https://www.whatuni.com/");
+await page.getByRole("button",{name:'Accept'}).click();
+await page.locator("[title='User']").click();
+await page.screenshot();
+await page.locator("").screenshot();
+page.locator().pressSequentially()
+page.on("dialog",dialog=>dialog.accept);
+page.locator().scrollIntoViewIfNeeded
+
 })
