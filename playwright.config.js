@@ -40,9 +40,24 @@ timeout:40*100,
 
   /* Configure projects for major browsers */
   projects: [
+      // 1️⃣ Setup Project (Login + Save auth.json)
     {
-      name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      name: "setup",
+      testMatch: /auth\.setup\.spec\.js/,
+    },
+
+    // 2️⃣ Main Regression Tests (Reuse auth.json)
+    {
+      name: "chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+
+        /* ✅ Use Saved Login Session */
+        storageState: "auth.json",
+      },
+
+      /* Run tests only after setup completes */
+      dependencies: ["setup"],
     },
     
     

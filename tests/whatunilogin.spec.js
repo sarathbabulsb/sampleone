@@ -94,7 +94,7 @@ await allproduct.getByRole('link',{name:'Try it out'}).click();
 test.only("srinitest",async({browser,page})=>{
 
 await page.goto("https://www.whatuni.com/");
-await page.getByRole("button",{name:'Accept'}).click();
+// await page.getByRole("button",{name:'Accept'}).click();
 await page.locator("[title='User']").click();
 await page.screenshot();
 await page.locator("test").screenshot();
