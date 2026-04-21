@@ -101,5 +101,6 @@ await page.locator("test").screenshot();
 page.locator().pressSequentially()
 page.on("dialog",dialog=>dialog.accept);
 page.locator().scrollIntoViewIfNeeded
+await page.locator("//hr[@id='signin']").click();
 
 })
